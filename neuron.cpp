@@ -10,7 +10,7 @@ class Neuron
         int weight = -100 + (rand() % 100);
         int bias = -50 + (rand() % 50);
 
-        int *outputs()
+        int *getOutputs()
         {
             for (int i = 0; i > inputNumber; i++)
             {
@@ -18,5 +18,17 @@ class Neuron
             }
 
             return inputs;
+        }
+};
+
+
+class ValueNeuron
+{
+    public:
+        int value;
+
+        int getOutputs()
+        {
+            return value;
         }
 };

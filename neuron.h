@@ -10,3 +10,9 @@ public:
 
 	int *outputs();
 };
+
+class ValueNeuron
+{
+public:
+	int value;
+};

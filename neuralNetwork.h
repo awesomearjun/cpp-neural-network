@@ -1,4 +1,5 @@
 #pragma once
+#include "structs.h"
 
 class NeuralNetwork
 {

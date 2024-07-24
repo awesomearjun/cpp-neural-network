@@ -1,13 +1,15 @@
 #include "neuron.h"
-
-#pragma once
+#include <vector>
+#include "structs.h"
 
 class NeuralNetwork
 {
     public:
         int *inputs;
 
-        void layers(int layerCount, int neuronCount);
+        void layers(std::vector<std::variant<ValueLayer, Layer>> layers) {
+            // pass it into other functions
+        };
         void eLU(int *outputs, int alpha);
         void SGD(int learningRate);
         void forwardPass(int *outputs);
