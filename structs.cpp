@@ -5,7 +5,7 @@
 
 struct Layer
 {
-    const int neuronCount;
+    int neuronCount;
     mutable std::vector<Neuron> neurons;
     
     void fillData() 

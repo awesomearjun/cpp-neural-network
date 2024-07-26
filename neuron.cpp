@@ -12,6 +12,7 @@ float eLU(float x, float alpha)
 class Neuron
 {
     public:
+        std::vector<std::variant<ValueNeuron, Neuron>> nextNeurons;
         std::vector<float> inputs;
         float weight = -100 + (rand() % 100);
         float bias = -50 + (rand() % 50);
@@ -32,6 +33,7 @@ class Neuron
 class ValueNeuron
 {
     public:
+        std::vector<std::variant<ValueNeuron*, Neuron*>> nextNeurons;
         float value;
 
         int getOutputs()

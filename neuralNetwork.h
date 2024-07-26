@@ -5,11 +5,8 @@
 class NeuralNetwork
 {
 public:
-    std::vector<float> inputs;
-
-    void layers(int layerCount, int neuronCount);
-    void eLU(int *outputs, int alpha);
+    void layers(ValueLayer ins, std::vector<std::vector<Layer>> hidden, std::vector<ValueLayer> outs);
     void SGD(int learningRate);
-    void forwardPass(int *outputs);
+    void forwardPass(std::vector<float> inputs);
     void backwardPass();
 };

@@ -6,6 +6,7 @@ float eLU(float x, float alpha);
 class Neuron
 {
 public:
+	std::vector<std::variant<ValueNeuron, Neuron>> nextNeurons;
 	int inputNumber;
 	std::vector<float> inputs;
 	float weight;
@@ -17,5 +18,6 @@ public:
 class ValueNeuron
 {
 public:
+	std::vector<std::variant<ValueNeuron*, Neuron*>> nextNeurons;
 	float value;
 };
