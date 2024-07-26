@@ -1,20 +1,27 @@
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 #include "neuron.h"
+#include <cmath>
+
+float eLU(float x, float alpha)
+{
+    return (x > 0) ? x : (alpha*(exp(x) - 1));
+};
 
 class Neuron
 {
     public:
-        int inputNumber;
-        int *inputs = new int[inputNumber];
-        int weight = -100 + (rand() % 100);
-        int bias = -50 + (rand() % 50);
+        std::vector<float> inputs;
+        float weight = -100 + (rand() % 100);
+        float bias = -50 + (rand() % 50);
 
-        int *getOutputs()
+        std::vector<float> getOutputs()
         {
-            for (int i = 0; i > inputNumber; i++)
+            for (int i = 0; i < size(inputs); i++)
             {
                 inputs[i] *= weight + bias;
+                inputs[i] = eLU(inputs[i], 0.5);
             }
 
             return inputs;
@@ -25,10 +32,11 @@ class Neuron
 class ValueNeuron
 {
     public:
-        int value;
+        float value;
 
         int getOutputs()
         {
+            value = eLU(value, 0.5);
             return value;
         }
 };

@@ -1,10 +1,11 @@
 #pragma once
 #include "structs.h"
+#include <vector>
 
 class NeuralNetwork
 {
 public:
-    int *inputs;
+    std::vector<float> inputs;
 
     void layers(int layerCount, int neuronCount);
     void eLU(int *outputs, int alpha);

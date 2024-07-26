@@ -5,7 +5,7 @@
 class NeuralNetwork
 {
     public:
-        int *inputs;
+        std::vector<float> inputs;
 
         void layers(std::vector<std::variant<ValueLayer, Layer>> layers) {
             // pass it into other functions

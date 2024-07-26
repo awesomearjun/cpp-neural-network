@@ -1,18 +1,21 @@
 #pragma once
+#include <vector>
+
+float eLU(float x, float alpha);
 
 class Neuron
 {
 public:
 	int inputNumber;
-	int *inputs;
-	int weight;
-	int bias;
+	std::vector<float> inputs;
+	float weight;
+	float bias;
 
-	int *outputs();
+	float *outputs();
 };
 
 class ValueNeuron
 {
 public:
-	int value;
+	float value;
 };
